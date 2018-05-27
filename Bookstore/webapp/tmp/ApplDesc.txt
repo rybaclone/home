@@ -1,0 +1,16 @@
+simple jsp run on Tomcat server connection with mysql db
+
+Tools:
+	Eclipse Oxigen
+	MySQL Workbench
+
+OS: Window
+AppServer: Tomcat
+DB: Mysql
+
+init db
+	run in Mysql
+		Bookstore\webapp\resource\createDb.sql
+test:
+	only backend \Bookstore\src\test\TestApp.java
+		
