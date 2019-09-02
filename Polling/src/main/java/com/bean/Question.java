@@ -1,8 +1,7 @@
-package com.mikrotik;
+package com.mikrotik.bean;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,30 +17,32 @@ public class Question {
 	private String name;
 	private String description;
 
+//	@Column(name = "date", nullable = false)
 	private Date createDate;
-	private int rating;
+	//private LocalDate createDate; 
+	public int rating;
 
 	private boolean done;
 
 	public Question() {
 	}
 
-	public Question(String name) {
+/*	public Question(String name) {
 		this.name = name;
-		this.description = "auto fill";
+		this.description = "auto fill for test";
 		this.createDate = new Date();
 		this.rating = 0;
 	}
-	
-	//TODO: add description
+*/
+
 	public Question(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.createDate = new Date();
+		this.createDate = new Date(); // LocalDate.now(); 
 		this.rating = 0;
 	}
-		
 	
+		
 	public long getId() {
 		return id;
 	}
@@ -58,7 +59,7 @@ public class Question {
 		this.createDate = createDate;
 	}
 
-	public long getRating() {
+	public int getRating() {
 		return rating;
 	}
 
