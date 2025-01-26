@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -27,9 +27,13 @@ public class SportEvent extends AbstractEntity {
 		this.eventStatus = eventStatus;
 		this.sportType = sportType;
 	}
-
-	@OneToOne
-	@JoinColumn(name = "type_id", referencedColumnName = "id")
+	
+	public SportEvent() {
+		
+	}
+	
+	@ManyToOne // (cascade = CascadeType.ALL)
+	@JoinColumn(name = "type_id", referencedColumnName = "id") //, updatable=false, nullable=false
 	private SportType sportType;
 
 	@Enumerated(EnumType.STRING)
