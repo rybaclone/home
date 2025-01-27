@@ -37,7 +37,7 @@ public class SportEventController {
 	public ResponseEntity<SportEvent> createEvent(@RequestBody SportEvent event) {
 
 		SportEvent newEvent = repository.save(event);
-		return ResponseEntity.status(HttpStatus.CREATED).body(event);
+		return ResponseEntity.status(HttpStatus.CREATED).body(newEvent);
 
 	}
 
